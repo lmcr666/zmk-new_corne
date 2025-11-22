@@ -12,7 +12,7 @@ layers:
   - L
   - U
   - Y
-  - {t: '''', s: '"'}
+  - {t: ;, s: ':'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: A, h: LGUI}
@@ -43,11 +43,11 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:keyboard-esc$$', h: num}
-  - {t: '$$mdi:keyboard-space$$', h: mouse}
-  - {t: '$$mdi:keyboard-tab$$', h: media}
+  - {t: '$$mdi:keyboard-esc$$', h: media}
+  - {t: '$$mdi:keyboard-space$$', h: nav}
+  - {t: '$$mdi:keyboard-tab$$', h: mouse}
   - {t: '$$mdi:keyboard-return$$', h: sym}
-  - {t: '$$mdi:backspace$$', h: nav}
+  - {t: '$$mdi:backspace$$', h: num}
   - {t: '$$mdi:backspace-reverse-outline$$', h: fun}
   nav:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -93,10 +93,10 @@ layers:
   - END
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   mouse:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -142,8 +142,8 @@ layers:
   - $$mdi:pan-right$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - '&mkp MB2'
   - '&mkp MB1'
   - '&mkp MB3'
@@ -190,9 +190,9 @@ layers:
   - {h: '3', s: '$$mdi:bluetooth-connect$$'}
   - $$mdi:bluetooth-off$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - STOP
   - $$mdi:play-pause$$
   - $$mdi:volume-off$$
@@ -211,7 +211,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: ;, s: ':'}
+  - {t: '''', s: '"'}
   - {t: '4', s: $}
   - {t: '5', s: '%'}
   - {t: '6', s: ^}
@@ -239,11 +239,11 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: ., s: '>', type: held}
+  - {t: ., s: '>'}
   - {t: '0', s: )}
   - {t: '-', s: _}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   sym:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -260,7 +260,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - ':'
+  - '"'
   - $
   - '%'
   - ^
