@@ -1,5 +1,5 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 40   // 10
 
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
@@ -12,7 +12,7 @@
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 
-&msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
+&msc_input_listener { input-processors = <&zip_scroll_scaler 3 1>; };  // was 2 1
 
 &msc {
     acceleration-exponent = <0>;      // 0
@@ -30,19 +30,21 @@
 
 / {
     behaviors {
-        td0: td0 {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Shift/Caps Lock Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
-        };
-        hm: homerow_mods {
+        hm: home_row_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
+            quick-tap-ms = <175>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+        };
+        lt: layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            flavor = "balanced";
+            bindings = <&mo>, <&kp>;
         };
     };
 
@@ -75,10 +77,10 @@
         alfa {
             display-name = "alfa";
             bindings = <
-&none  &kp Q        &kp W        &kp E         &kp R            &kp T                   &none           &kp Y       &kp U         &kp I         &kp O        &kp P          &none
-&none  &hm LGUI A   &hm LALT S   &hm LSHIFT D  &hm LCTRL F      &kp G            &none  &none  &none    &kp H       &hm LCTRL J   &hm LSHIFT K  &hm LALT L   &hm LGUI SEMI  &none
-&none  &kp Z        &kp X        &kp C         &kp V            &kp B      &none        &none           &kp N       &kp M         &kp COMMA     &kp DOT      &kp FSLH       &none
-                                 &lt 3 ESC     &lt 1 SPACE      &lt 2 TAB                               &lt 5 RET   &lt 4 BSPC    &lt 6 DEL
+&none  &kp Q        &kp W        &kp E         &kp R            &kp T                   &none           &kp Y         &kp U         &kp I         &kp O        &kp P          &none
+&none  &hm LGUI A   &hm LALT S   &hm LSHIFT D  &hm LCTRL F      &kp G            &none  &none  &none    &kp H         &hm LCTRL J   &hm LSHIFT K  &hm LALT L   &hm LGUI SEMI  &none
+&none  &kp Z        &kp X        &kp C         &kp V            &kp B      &none        &none           &kp N         &kp M         &kp COMMA     &kp DOT      &kp FSLH       &none
+                                 &lt 3 ESC     &lt 1 SPACE      &lt 2 TAB                               &lt 5 RET     &lt 4 BSPC    &lt 6 DEL
             >;
         };
 
@@ -108,9 +110,9 @@
         media {
             display-name = "media";
             bindings = <
-&none  &none      &none       &none        &none       &none                &none         &none        &none         &none         &none        &none         &none
-&none  &kp LGUI   &kp LALT    &kp LSHFT    &kp LCTRL   &none         &none  &none  &none  &none        &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP &kp C_NEXT    &none
-&none  &none      &none       &none        &none       &none   &none        &none         &none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2 &bt BT_CLR    &none
+&none  &none      &none       &none        &none       &none                &none         &bt BT_CLR   &none         &none         &none        &none       &none
+&none  &kp LGUI   &kp LALT    &kp LSHFT    &kp LCTRL   &none         &none  &none  &none  &none        &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP &kp C_NEXT  &none
+&none  &none      &none       &none        &none       &none   &none        &none         &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3 &none       &none
                               &trans       &trans      &trans                             &kp C_STOP   &kp C_PP      &kp C_MUTE
             >;
         };
