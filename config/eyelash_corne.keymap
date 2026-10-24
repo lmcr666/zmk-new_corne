@@ -50,13 +50,13 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp none>, <&to 7>;
+            bindings = <&none>, <&to 7>;
         };
         td_alfa: td_alfa_layer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp none>, <&to 0>;
+            bindings = <&none>, <&to 0>;
         };
     };
 
@@ -163,7 +163,7 @@
         };
 
         // GAME Layer
-        fun {
+        gae {
             display-name = "gae";
             bindings = <
 &none   &kp TAB      &kp Q   &kp W     &kp E       &kp R                   &none          &kp T     &kp Y      &kp U       &kp I     &kp O      &none
@@ -174,7 +174,7 @@
         };
 
         // GAME 2 Layer
-        fun {
+        gay {
             display-name = "gay";
             bindings = <
 &none   &trans   &kp N1   &kp N2   &kp N3   &td_alfa                  &none          &trans   &trans   &trans   &trans   &trans   &none
